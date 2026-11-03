@@ -1,0 +1,20 @@
+/* 両サイトで共通の切り替えリンク。配色は表示中のサイトに合わせます。 */
+.site-switch {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  padding: 7px;
+  border: 1px solid var(--switch-border);
+  border-radius: 999px;
+  background: var(--switch-background);
+  color: var(--switch-color);
+  font: 500 13px/1.5 Arial, "Yu Gothic", Meiryo, sans-serif;
+  text-decoration: none;
+}
+.site-switch--research { --switch-color: #302923; --switch-border: #ccc1ae; --switch-background: #f4f0e6; }
+.site-switch--writing { --switch-color: #17643d; --switch-border: #a8bdaf; --switch-background: #fff; }
+.site-switch img { display: block; width: 20px; height: 20px; }
+.site-switch:hover { color: var(--switch-color); border-color: var(--switch-color); }
+.site-switch:focus-visible { outline: 2px solid var(--switch-color); outline-offset: 3px; }

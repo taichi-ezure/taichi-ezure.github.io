@@ -1,0 +1,64 @@
+/* 研究者サイト全体。HTMLの構造に対応したクラスで指定します。 */
+:root {
+  --green: #17643d;
+  --rule: #d5ddd7;
+  --font: Arial, "Yu Gothic", Meiryo, sans-serif;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: #fff; color: #000; font-family: var(--font); line-height: 1.8; overflow-wrap: anywhere; }
+a { color: #075c35; text-underline-offset: 3px; }
+a:focus-visible { outline: 2px solid var(--green); outline-offset: 3px; }
+h1, h2, h3 { line-height: 1.6; }
+p { margin: 0 0 16px; }
+.skip { position: absolute; top: -80px; left: 16px; }
+.skip:focus { top: 8px; padding: 8px; background: white; z-index: 2; }
+.visually-hidden { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); }
+.research-header, .research-content, .footer-band { width: min(1000px, calc(100% - 40px)); margin-inline: auto; }
+.research-switch { padding-top: 8px; text-align: right; font-size: 13px; }
+.research-identity { display: flex; flex-direction: column; justify-content: center; height: 80px; color: #000; text-decoration: none; }
+.identity-caption { font-size: 12px; }
+.research-identity strong { font-size: 24px; line-height: 1.4; }
+.identity-en { color: var(--green); font-size: 13px; font-weight: bold; }
+.site-nav ul { display: flex; flex-wrap: wrap; padding: 0; margin: 0; list-style: none; background: var(--green); }
+.site-nav li { flex: 1 1 140px; }
+.site-nav a { display: flex; flex-direction: column; justify-content: center; min-height: 60px; padding: 9px 12px; border-right: 1px solid #ffffff40; color: white; text-decoration: none; text-align: center; font-size: 14px; font-weight: bold; line-height: 1.5; }
+.site-nav a:hover, .site-nav a[aria-current="page"] { background: #0e482a; }
+main.research-content { margin-top: 28px; margin-bottom: 40px; }
+main h1 { margin: 0 0 24px; padding-bottom: 8px; border-bottom: 2px solid #929499; color: var(--green); font-size: 26px; }
+main h1.visually-hidden { margin: 0; padding: 0; border: 0; }
+main h2 { margin: 0 0 16px; color: var(--green); font-size: 22px; }
+.research-home-section { margin-top: 32px; }
+.research-home-section h2 { padding: 4px 7px; border-bottom: 2px solid #929499; }
+.research-home-section p { margin: 0; padding: 8px 16px; }
+.photo-slider { position: relative; width: 100%; aspect-ratio: 5 / 1; overflow: hidden; border-radius: 5px; }
+.photo-slider img { display: block; width: 100%; height: auto; }
+.photo-slider img[hidden] { display: none; }
+.research-profile { display: grid; grid-template-columns: 220px minmax(0, 1fr); gap: 40px; padding: 8px 0 24px; align-items: start; }
+.research-profile img { max-width: 100%; height: auto; }
+.research-profile p { margin: 0 0 20px; }
+.profile-name { font-size: 22px; font-weight: bold; }
+.profile-en { display: block; font-size: 14px; font-weight: normal; }
+/* 年ごとの高さは本文から決まります。短い採択情報に固定高さを設けません。 */
+.research-achievement { margin: 0; padding: 0 0 24px; }
+.research-achievement + .research-achievement { padding-top: 24px; border-top: 1px solid var(--rule); }
+.research-achievement h2 { padding: 0 7px 8px; border-bottom: 2px solid #929499; }
+.achievement-copy { padding: 0 16px; font-size: 16px; }
+.achievement-copy p { margin: 0; }
+.research-body-placeholder { min-height: 200px; padding: 24px; border: 1px solid #bbcabe; background: #f8faf8; color: #666; }
+/* Contactのラベルと値を、同じ行の組として配置します。 */
+.contact-details { margin: 0; }
+.contact-details > div { display: grid; grid-template-columns: 100px minmax(0, 1fr); gap: 24px; padding: 20px 0; border-bottom: 1px solid var(--rule); }
+.contact-details dt { font-weight: bold; }
+.contact-details dd { margin: 0; }
+.contact-details address { font-style: normal; }
+.footer-band { height: 44px; background: var(--green); }
+.back-links { padding: 8px 0; text-align: right; font-size: 12px; }
+@media (max-width: 600px) {
+  .research-header, .research-content, .footer-band { width: calc(100% - 32px); }
+  .site-nav li { flex-basis: 30%; }
+  .site-nav a { padding: 8px 4px; font-size: 12px; }
+  .research-profile { grid-template-columns: 1fr; gap: 24px; }
+  .research-profile img { width: 180px; }
+  .achievement-copy { padding-inline: 8px; font-size: 14px; }
+  .contact-details > div { grid-template-columns: 1fr; gap: 6px; padding: 16px 0; }
+}

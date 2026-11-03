@@ -1,0 +1,43 @@
+/* 総合トップ専用 */
+:root {
+  --paper: #f7f5ef;
+  --ink: #302923;
+  --muted: #72685d;
+  --rule: #ccc1ae;
+}
+* { box-sizing: border-box; }
+body { margin: 0; color: var(--ink); background: var(--paper); font-family: Arial, "Yu Gothic", Meiryo, sans-serif; line-height: 1.9; overflow-wrap: anywhere; }
+a { color: inherit; }
+a:focus-visible { outline: 2px solid #68342f; outline-offset: 5px; }
+h1, h2, p { margin-top: 0; }
+.skip { position: absolute; top: -80px; left: 16px; }
+.skip:focus { top: 8px; padding: 8px; background: var(--paper); z-index: 2; }
+.gateway { min-height: 100vh; display: flex; flex-direction: column; border-top: 5px solid var(--ink); }
+.gateway-header, .gateway-footer { width: min(1040px, calc(100% - 64px)); margin-inline: auto; color: var(--muted); font-size: 11px; letter-spacing: .16em; }
+.gateway-header { display: flex; justify-content: space-between; gap: 16px; padding-block: 22px; border-bottom: 1px solid var(--rule); }
+.gateway-main { width: min(880px, calc(100% - 64px)); margin: auto; padding-block: 48px 64px; }
+.gateway-title { text-align: center; margin-bottom: 46px; }
+.eyebrow { font-size: 13px; letter-spacing: .22em; color: var(--muted); }
+.gateway-title h1 { font-size: 36px; letter-spacing: .22em; margin-bottom: 8px; }
+.gateway-title > p:last-child { font-size: 13px; letter-spacing: .16em; color: var(--muted); margin: 0; }
+.doorways { display: grid; grid-template-columns: 1fr 1fr; border-block: 1px solid var(--rule); }
+.door { padding: 36px; text-decoration: none; min-width: 0; }
+.door:hover { background: #ede9de; }
+.research-door { --accent: #285640; border-right: 1px solid var(--rule); }
+.writing-door { --accent: #68342f; }
+.door-number { font-size: 11px; letter-spacing: .14em; color: var(--accent); }
+.door h2 { font-size: 28px; letter-spacing: .14em; margin: 20px 0 0; color: var(--accent); }
+.door p { font-size: 14px; color: var(--muted); margin: 12px 0 0; }
+.door-enter { display: flex; justify-content: space-between; gap: 16px; font-size: 13px; color: var(--accent); }
+.gateway-footer { padding-block: 20px; text-align: center; }
+@media (max-width: 560px) {
+  .gateway-header, .gateway-main { width: calc(100% - 40px); }
+  .gateway-header { font-size: 9px; letter-spacing: .08em; }
+  .gateway-main { padding-block: 36px 42px; }
+  .gateway-title { margin-bottom: 32px; }
+  .gateway-title h1 { font-size: 30px; }
+  .doorways { grid-template-columns: 1fr; }
+  .research-door { border-right: 0; border-bottom: 1px solid var(--rule); }
+  .door { padding: 24px; }
+  .door h2 { font-size: 25px; margin: 12px 0 0; }
+}
